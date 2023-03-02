@@ -138,9 +138,11 @@ public class Emp implements java.io.Serializable {
 
 
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "PROJECT_EMP", catalog = "empresa", joinColumns = {
-			@JoinColumn(name = "EMPNO", nullable = false, updatable = false) }, inverseJoinColumns = {
-					@JoinColumn(name = "PROJECTNO", nullable = false, updatable = false) })
+	@JoinTable(name = "PROJECT_EMP", catalog = "empresa",
+			joinColumns = {
+			@JoinColumn(name = "EMPNO", nullable = false, updatable = false) },
+			inverseJoinColumns = {
+			@JoinColumn(name = "PROJECTNO", nullable = false, updatable = false) })
 	public Set<Project> getProjects() {
 		return this.projects;
 	}

@@ -62,10 +62,7 @@ public class Project implements java.io.Serializable {
 
 
 
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "PROJECT_EMP", catalog = "empresa", joinColumns = {
-			@JoinColumn(name = "PROJECTNO", nullable = false, updatable = false) }, inverseJoinColumns = {
-					@JoinColumn(name = "EMPNO", nullable = false, updatable = false) })
+	@ManyToMany(mappedBy = "projects")
 	public Set<Emp> getEmps() {
 		return this.emps;
 	}
